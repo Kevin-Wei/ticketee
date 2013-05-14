@@ -3,4 +3,9 @@ class Ticket < ActiveRecord::Base
   attr_accessible :description, :title
   validates :title, :presence => true
   validates :description, :presence => true, :length => {:minimum => 10}
+
+  def blahblahblah
+    puts "blahblahblah"
+  end
+
 end

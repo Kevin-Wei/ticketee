@@ -14,7 +14,7 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-05-14T14:58:47-07:00">2013-05-14T14:58:47-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-05-15T16:07:59-07:00">2013-05-15T16:07:59-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.17
+         2.26
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>9</b> files in total.
-    <b>83</b> relevant lines. 
-    <span class="green"><b>83</b> lines covered</span> and
+    <b>89</b> relevant lines. 
+    <span class="green"><b>89</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,11 +63,11 @@
       <tr>
         <td class="strong"><a href="#f95260b943cef0e08b5b5ae0b44dac10c60fdd4f" class="src_link" title="app/controllers/projects_controller.rb">app/controllers/projects_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>63</td>
-        <td>30</td>
-        <td>30</td>
+        <td>72</td>
+        <td>36</td>
+        <td>36</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -153,15 +153,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.9
+         2.17
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>3</b> files in total.
-    <b>63</b> relevant lines. 
-    <span class="green"><b>63</b> lines covered</span> and
+    <b>69</b> relevant lines. 
+    <span class="green"><b>69</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -191,11 +191,11 @@
       <tr>
         <td class="strong"><a href="#f95260b943cef0e08b5b5ae0b44dac10c60fdd4f" class="src_link" title="app/controllers/projects_controller.rb">app/controllers/projects_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>63</td>
-        <td>30</td>
-        <td>30</td>
+        <td>72</td>
+        <td>36</td>
+        <td>36</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -509,8 +509,8 @@
     <h3>app/controllers/projects_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>30</b> relevant lines. 
-      <span class="green"><b>30</b> lines covered</span> and
+      <b>36</b> relevant lines. 
+      <span class="green"><b>36</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -524,10 +524,10 @@
           <code class="ruby">class ProjectsController &lt; ApplicationController</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  before_filter :authorize_admin!, :except =&gt; [:index, :show]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -572,8 +572,8 @@
           <code class="ruby">	def index</code>
         </li>
       
-        <li class="covered" data-hits="23" data-linenumber="10">
-          <span class="hits">23</span>
+        <li class="covered" data-hits="28" data-linenumber="10">
+          <span class="hits">28</span>
           
           <code class="ruby">		@projects = Project.all</code>
         </li>
@@ -842,40 +842,40 @@
           <code class="ruby">	private</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
-          <code class="ruby">		def find_project</code>
+          <code class="ruby">	def authorize_admin!</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="56">
-          <span class="hits">20</span>
+        <li class="covered" data-hits="14" data-linenumber="57">
+          <span class="hits">14</span>
           
-          <code class="ruby">			@project = Project.find(params[:id])</code>
+          <code class="ruby">		authenticate_user!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="covered" data-hits="14" data-linenumber="58">
+          <span class="hits">14</span>
           
-          
-          <code class="ruby">			rescue ActiveRecord::RecordNotFound</code>
+          <code class="ruby">		unless current_user.admin?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="5" data-linenumber="59">
+          <span class="hits">5</span>
           
-          <code class="ruby">			flash[:alert] = &quot;The project you were looking &quot; +</code>
+          <code class="ruby">			flash[:alert] = &quot;You must be an admin to do that.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="covered" data-hits="5" data-linenumber="60">
+          <span class="hits">5</span>
           
-          
-          <code class="ruby">							&quot;for could not be found.&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
-          
-          <code class="ruby">			redirect_to projects_path</code>
+          <code class="ruby">			redirect_to root_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="61">
@@ -887,10 +887,64 @@
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">	end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
+          
+          <code class="ruby">		def find_project</code>
+        </li>
+      
+        <li class="covered" data-hits="20" data-linenumber="65">
+          <span class="hits">20</span>
+          
+          <code class="ruby">			@project = Project.find(params[:id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">			rescue ActiveRecord::RecordNotFound</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
+          <code class="ruby">			flash[:alert] = &quot;The project you were looking &quot; +</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">							&quot;for could not be found.&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="69">
+          <span class="hits">1</span>
+          
+          <code class="ruby">			redirect_to projects_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">		end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby"></code>

@@ -3,3 +3,7 @@
 
 en:
   hello: "Hello world"
+  ticket:
+    edit: "Edit Ticket"
+    delete: "Delete Ticket"
+    delete_confirm: "Are you sure you want to delete this ticket?"
